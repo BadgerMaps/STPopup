@@ -7,14 +7,19 @@ let package = Package(
         .iOS(.v11)
     ],
     products: [
-        .library(name: "STPopup", targets: ["STPopup"]),
+        .library(
+            name: "STPopup",
+            targets: ["STPopup"]
+        ),
     ],
     targets: [
         .target(
             name: "STPopup",
             path: "Sources/STPopup",
-            publicHeadersPath: "."
+            publicHeadersPath: ".",
+            cSettings: [
+                .headerSearchPath(".")
+            ]
         )
     ]
 )
-
